@@ -25,6 +25,18 @@ h1, p {
     margin: 10px 0;
 }
 
+
+#canvasContainer {
+    width: 90%;
+    max-width: 800px;
+    height: 50vh;
+    margin: 20px 0;
+    background-color: #020C1B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #inputContainer {
     width: 90%; /* Making it responsive */
     max-width: 600px;
@@ -34,4 +46,14 @@ h1, p {
     align-items: center;
     justify-content: center;
     background-color: #020C1B;
+}
+
+footer {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #112240;
+    color: #64FFDA;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+    margin-top: auto; /* Pushes the footer to the bottom */
 }

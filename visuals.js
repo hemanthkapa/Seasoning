@@ -6,6 +6,7 @@ let particles_a = [];
 let particles_b = [];
 let particles_c = [];
 
+let systemInitialized = false; 
 
 // Creating some variables that will be used to visualize audio features
 let num;
@@ -64,8 +65,6 @@ function setupParticle(){
     particles_b = [];
     particles_c = [];
 
-    systemInitialized = true;
-
     // Selected audio features to be visualized (energy, duration_ms, loudness, danceability, and tempo)
     num = map(audioFeatures.energy, 0, 1, 500, 2000);
     fade = map(audioFeatures.duration_ms, 0, 360000, 50, 150);
@@ -80,6 +79,8 @@ function setupParticle(){
         particles_b[i] = new Particle(random(width), random(height), map(audioFeatures.energy, 0, 1, 0.05, 3));
         particles_c[i] = new Particle(random(width), random(height), map(audioFeatures.energy, 0, 1, 0.05, 3));
     }
+
+    systemInitialized = true;
 
 }
 
