@@ -1,4 +1,5 @@
 // @ts-nocheck
+import config from "./config";
 
 // Creating some Global Variables 
 let particles_a = [];
@@ -13,6 +14,24 @@ let radius;
 let noiseScale;
 let noiseStrength;
 
+// Spotify Token Variables
+let token;
+let audioFeatures;
+
+// Get Spotify API credentials from config.js
+const clientId = config.spotify.clientId;
+const clientSecret = config.spotify.clientSecret;
+
+// Spotify API Authorization
+const authOptions = {
+    method: 'POST',
+    header: {
+        'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret),
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'grant_type=client_credentials'
+}
+
 
 
 function setup(){
@@ -22,6 +41,14 @@ function setup(){
     background(0); // Setting the background
     noStroke(); // Disabling stroke for shapes
  
+}
+
+function setupParticle(){
+    //Reset th particles array everytime a new track has been introduced
+    particles_a = [];
+    particles_b = [];
+    particles_c = [];
+
 }
 
 // Particles references from https://openprocessing.org/sketch/1990191
@@ -34,7 +61,7 @@ class Particle{
     }
 
     move(){
-        this.angle = noise(this.loc.x / noiseScale, this.loc.y / noiseScal, this.loc.y / noiseScale) TWO_PI * noiseStrength;
+        this.angle = noise(this.loc.x / noiseScale, this.loc.y / noiseScal, this.loc.y / noiseScale) * TWO_PI * noiseStrength;
         this.dir.x = cos(this.angle); 
         this.dir.y = sin(this.angle);
         this.vel = this.dir.copy(); 
@@ -52,4 +79,6 @@ class Particle{
     update(r){
         ellipse(this.loc.x, this.loc.y, r, r);
     }
+
 }
+
