@@ -6,6 +6,7 @@
     <title>Seasoning</title>
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="variables.css">
+    <script src="libraries/p5.min.js"></script>
 </head>
 <body>
 
@@ -16,6 +17,15 @@
 
     <!-- Container for the p5.js Canvas-->
      <div id="canvasContainer"></div>
+
+    <!-- Input Field -->
+    <div id="inputContainer">
+        <input type="text" id="songInput" placeholder="Enter a song name" oninput="searchSuggestions()">
+        <button onclick="searchSong()">Search</button>
+        <div id="suggestionBox"></div>
+    </div>
+
+    <script src="visuals.js"></script>
         
     
 </body>

@@ -24,3 +24,14 @@ section#descriptionContainer {
 h1, p {
     margin: 10px 0;
 }
+
+#inputContainer {
+    width: 90%; /* Making it responsive */
+    max-width: 600px;
+    height: 50vh;
+    margin: 20px 0; /*Adding some space around the input container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #020C1B;
+}
