@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seasoning</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="variables.css">
+    <script src="libraries/p5.min.js"></script>
 </head>
 <body>
+
+    <section id="descriptionContainer">
+        <h1> Welcome to Seasoning </h1>
+        <p> Transform your favourite songs into cool visual experiences. Let's spice things up </p>
+    </section>
+
+    <!-- Container for the p5.js Canvas-->
+     <div id="canvasContainer"></div>
+
+    <!-- Input Field -->
+    <div id="inputContainer">
+        <input type="text" id="songInput" placeholder="Enter a song name" oninput="searchSuggestions()">
+        <button onclick="searchSong()">Search</button>
+        <div id="suggestionBox"></div>
+    </div>
+
+    <script src="visuals.js"></script>
+        
     
 </body>
+<footer>
+    Made with <span class="heart">❤️</span> by Hemanth
+</footer>
 </html>
